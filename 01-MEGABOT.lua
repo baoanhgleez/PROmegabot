@@ -4,7 +4,7 @@
 --------------------------------------
 
 -- 
-target_location ="Dragons Den"
+target_location ="Viridian City"
 
 
 -- Do you want to use the PathFinder?
@@ -21,7 +21,7 @@ mapList = {
 
 
 -- If you dont have any mount, use ""
-mount = "Zapdos Mount"
+mount = "Bicycle"
 
 --[[	
 	area = Grass / Water    : Execute moveToGrass() or moveToWater()
@@ -29,7 +29,8 @@ mount = "Zapdos Mount"
     area = {x, y}           : Go fishing at (x,y)
     area = {x1, y1, x2, y2} : Execute moveToRectangle(x1, y1, x2, y2)
 --]]
-area ="water"
+area ={30,49}
+--{30, 42, 34, 50} -- Celadon City Water
 --{21, 16, 25, 18} -- Granite Cave B1F
 --{20, 35, 30, 40} -- Route 6 water
 --{20, 26, 24, 27} -- Route 15
@@ -37,10 +38,14 @@ area ="water"
 -- Do you want to swap pokemon during training or leveling?
 autoSwap=true
 -- Do you want to catch pokemon during training or leveling?
-caughtPoke=false
+caughtPoke=true
 
 -- Index of Pokemon that you want to switch in to every battle
-attacker=2
+attacker=1
+
+useHeadbutt = false
+useDigSpot = false
+
 
 
 -------------------------------------------------
@@ -60,23 +65,23 @@ statusMove = ""
 
 -- Do you want to check Abilities of Pokemon before catch its?
 -- WARNING : It's just work with Hunter.lua Module only
-checkAbi=false
+checkAbi=true
 
 -- Percent of Health start throwing ball
-lowestHealthPercent = 50
+lowestHealthPercent = 70
 -- Max Pokemon want to catch
-maxCounter=50
+maxCounter=20
 
 -- Config list of pokemon you want to catch
-wishList = {"Dragonair", "Cubone", "Buizel", "Shellder"}
+wishList = {"Magikarp", "Shellder", "Abra"}
 -- Config list of abilities of pokemon you want to catch
-abiList = {"Shield Dust", "Natural Cure", "Levitate", "Thick Fat", "Pickup", "Snow Warning"}
+abiList = {"Rattled", "Magic Guard", "Natural Cure", "Levitate", "Thick Fat", "Pickup", "Snow Warning"}
 
 -- Do you want to catch uncaught pokemon?
-collectPoke=false
+collectPoke=true
 
 -- Attach every pokemon you dont want to catch?
-farmMoney=true
+farmMoney=false
 
 -------------------------------------------------
 --------         LEVEL CONFIG        ------------
@@ -84,10 +89,10 @@ farmMoney=true
 -------------------------------------------------
 
 -- Pokemon will attack by itself at what Lv?
-atkLv = 55
+atkLv = 1
 
 -- Max Level you want to reach
-maxLv = 99
+maxLv = 40
 
 
 -------------------------------------------------
@@ -97,10 +102,10 @@ maxLv = 99
 
 -- Config list of Evs set you want to train
 -- Attack, Defense, Speed, SpAttack, SpDefense, HP
-EvList = {"Defense"}
-EvValue = {240}
+EvList = {"Speed"}
+EvValue = {252, 230, 50}
 
 ------------------------------------------------------
 
 -- Which module you will apply? Hunter, Trainer or Leveler? 
-dofile "Leveler.lua"
+dofile "Hunter.lua"

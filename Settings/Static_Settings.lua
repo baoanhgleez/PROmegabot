@@ -25,10 +25,10 @@ Settings = {
 
         DISCOVER   = true,  --discover items.
         HARVEST    = true,  -- harvest berries.
-        HEADBUTT   = false, -- headbutt trees.
-        DIG        = false,  -- dig digSpots.
+        HEADBUTT   = useHeadbutt, -- headbutt trees.
+        DIG        = useDigSpot,  -- dig digSpots.
 
-        K_SUBWAY   = 15, -- Weight for using the subway path. Kanto
+        K_SUBWAY   = 20, -- Weight for using the subway path. Kanto
         J_SUBWAY   = 10, -- Weight for using the subway path. Johto
         H_SUBWAY   = 5, -- Weight for using the subway path. Hoenn
 
@@ -37,15 +37,15 @@ Settings = {
     },
 --  Custom Settings, loaded if the bot name match.
 --  Omitted settings will be taken on Default profile.
-    daisage    = {
-        MOUNT      = "Arcanine Mount",
+    beemeister    = {
+        MOUNT      = "Bicycle",
 
         DISCOVER   = true,  --discover items.
         HARVEST    = true,  -- harvest berries.
-        HEADBUTT   = false, -- headbutt trees.
-        DIG        = false,  -- dig digSpots.
+        HEADBUTT   = useHeadbutt, -- headbutt trees.
+        DIG        = useDigSpot,  -- dig digSpots.
 
-        K_SUBWAY   = 15, -- Weight for using the subway path. Kanto
+        K_SUBWAY   = 20, -- Weight for using the subway path. Kanto
         J_SUBWAY   = 10, -- Weight for using the subway path. Johto
         H_SUBWAY   = 10,-- Weight for using the subway path. Hoenn
 
@@ -58,8 +58,8 @@ Settings = {
         
         DISCOVER   = true,  --discover items.
         HARVEST    = true,  -- harvest berries.
-        HEADBUTT   = false, -- headbutt trees.
-        DIG        = false,  -- dig digSpots.
+        HEADBUTT   = useHeadbutt, -- headbutt trees.
+        DIG        = useDigSpot,  -- dig digSpots.
 
         K_SUBWAY   = 5, -- Weight for using the subway path. Kanto
         J_SUBWAY   = 5, -- Weight for using the subway path. Johto

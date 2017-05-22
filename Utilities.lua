@@ -79,7 +79,7 @@ function onPrepareBattleMessage(message)
 	end
 
 	if stringContains(message, "caught") then
-		playSound("notice.wav")
+		playSound("Assets/score.wav")
 		pokecounter = pokecounter +1
 	end
 
@@ -87,7 +87,7 @@ function onPrepareBattleMessage(message)
 		usedRolePlay = true
 	end
 
-	if stringContains(message, "can not run away") or stringContains(message,"can not switch") then
+	if stringContains(message, "You can not run away!") or stringContains(message,"can not switch") then
 		runable = false
 	end
 
@@ -109,7 +109,7 @@ registerHook("onDialogMessage", onDialogMessageHK)
 
 -- Notice sound when bot was stopped
 function onStopHK()
-	playSound("stop.wav")
+	playSound("Asset/message.wav")
 end
 registerHook("onStop", onStopHK)
 
@@ -258,19 +258,19 @@ end
 -- Remove any Bad Status condition
 function clearPokemonStatus(_index)
 	if getPokemonStatus(_index)=="BURN" and (hasItem("Burn Heal") or hasItem("Rawst Berry")) then
-		return useItemOnPokemon("Burn Heal", _index) or useItemOnPokemon("Rawst Berry", _index)
+		return useItemOnPokemon("Burn Heal", _index) or useItemOnPokemon("Rawst Berry", _index) or false
 
 	elseif getPokemonStatus(_index)=="PARALIZE" and (hasItem("Paralyze Heal") or hasItem("Cheri Berry")) then
-		return useItemOnPokemon("Paralyze Heal", _index) or useItemOnPokemon("Cheri Berry", _index)
+		return useItemOnPokemon("Paralyze Heal", _index) or useItemOnPokemon("Cheri Berry", _index) or false
 
 	elseif getPokemonStatus(_index)=="FREEZE" and (hasItem("Ice Heal") or hasItem("Aspear Berry")) then
-		return useItemOnPokemon("Ice Heal", _index) or useItemOnPokemon("Aspear Berry", _index)
+		return useItemOnPokemon("Ice Heal", _index) or useItemOnPokemon("Aspear Berry", _index) or false
 
 	elseif (getPokemonStatus(_index)=="POISON" or getPokemonStatus(_index)=="BPOISON") and (hasItem("Antidote") or hasItem("Pecha Berry")) then
-		return useItemOnPokemon("Antidote", _index) or useItemOnPokemon("Pecha Berry", _index)
+		return useItemOnPokemon("Antidote", _index) or useItemOnPokemon("Pecha Berry", _index) or false
 
 	elseif getPokemonStatus(_index)=="SLEEP" and (hasItem("Awakening") or hasItem("Chesto Berry")) then
-		return useItemOnPokemon("Awakening", _index) or useItemOnPokemon("Chesto Berry", _index)
+		return useItemOnPokemon("Awakening", _index) or useItemOnPokemon("Chesto Berry", _index) or false
 	end
 end
 
@@ -329,20 +329,20 @@ end
 
 -- Try to catch Opponent with weakMove and STATUS Support
 function tryToCatchOpponent()
-    if directCaught or getOpponentName()=="Wynaut" or getOpponentName()=="Ralts" then
-        return throwPokeball("Great Ball") 
+    if directCaught or getOpponentName()=="Wynaut" or getOpponentName()=="Ralts" or getOpponentName()=="Abra" then
+        return throwPokeball("Great Ball") or false
     end
 
-    local minHealthPercent = lowestHealth or 30;
+    local minHealthPercent = lowestHealthPercent or 30;
 
     if weakMove~="" and (getOpponentHealthPercent() > minHealthPercent) then
         if getActivePokemonNumber()~=swiper then
             if not runable then
-                return throwPokeball("Great Ball") or attack() or sendAnyPokemon()
+                return throwPokeball("Great Ball") or attack() or sendAnyPokemon() or false
             end
-            return sendPokemon(swiper) or throwPokeball("Great Ball") or sendAnyPokemon()
+            return sendPokemon(swiper) or throwPokeball("Great Ball") or sendAnyPokemon() or false
         else
-            return useMove(weakMove) or throwPokeball("Great Ball") or sendAnyPokemon()
+            return useMove(weakMove) or throwPokeball("Great Ball") or sendAnyPokemon() or false
         end
     end
 
@@ -352,15 +352,15 @@ function tryToCatchOpponent()
     		and getOpponentStatus() ~= "POISON" and getOpponentStatus() ~= "BPOISON") then
         if getActivePokemonNumber()~=anoyer then
             if not runable then
-                return throwPokeball("Great Ball") or attack() or sendAnyPokemon()
+                return throwPokeball("Great Ball") or attack() or sendAnyPokemon() or false
             end
-            return sendPokemon(anoyer) or throwPokeball("Great Ball") or sendAnyPokemon()
+            return sendPokemon(anoyer) or throwPokeball("Great Ball") or sendAnyPokemon() or false
         else
-            return useMove(statusMove) or throwPokeball("Great Ball") or sendAnyPokemon()
+            return useMove(statusMove) or throwPokeball("Great Ball") or sendAnyPokemon() or false
         end
     end
 
-    return throwPokeball("Pokeball") or run() or sendAnyPokemon()
+    return throwPokeball("Pokeball") or false
 end
 
 
@@ -446,7 +446,8 @@ function controlOnPathAction()
 	-- Get on mount if possible
 	if useMount(mount) then
 		return true
-	end	
+	end
+
 
 	map = getMapName()
 	if autoFindPath then

@@ -23,7 +23,7 @@ linkExce["Route 4"] = {
 }
 linkExce["Cerulean City_A"] = {
     ["Route 5_A"] = {17, 50}, -- daycare
-    ["Route 5_B"] = {22, 50} -- fastest path
+    ["Route 5_B"] = {17, 50} -- fastest path
 }
 linkExce["Route 25"] = {
     ["Route 24_A"] = {9, 30}, -- water side to cerulean cave

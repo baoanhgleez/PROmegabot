@@ -88,7 +88,7 @@ end
 
 function onBattleMessage(message)
 	if stringContains(message, "has grown to level") then
-		playSound("notice.wav")
+		playSound("Assets/score.wav")
 	end
 end
 
@@ -100,7 +100,7 @@ function onBattleAction()
 
 	-- Enable Hunter Module if caughtPoke = true
 	if isWildBattle() and caughtPoke and(isOpponentShiny() or (collectPoke and not isAlreadyCaught()) or listContains(wishList, getOpponentName())) then
-		return tryToCatchOpponent()
+		return tryToCatchOpponent() or sendAnyPokemon() or run()
 	end
 
 	-- Send facer to battle if possible
@@ -108,14 +108,14 @@ function onBattleAction()
 		if runable then
 			return sendPokemon(facer) or run() or sendUsablePokemon() or sendAnyPokemon()
 		else
-			return attack() or sendUsablePokemon() or sendAnyPokemon
+			return attack() or sendUsablePokemon() or sendAnyPokemon() or run()
 		end
 	end
 
 	if isPokemonCanAttack(getActivePokemonNumber()) then
-		return attack() or  run() or sendUsablePokemon() or sendAnyPokemon()	
+		return attack() or  run() or sendUsablePokemon() or sendAnyPokemon() or run()	
 	else
-		return run() or sendUsablePokemon() or sendAnyPokemon
+		return run() or sendUsablePokemon() or sendAnyPokemon() or run()
 	end
 
 end

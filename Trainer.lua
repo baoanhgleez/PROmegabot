@@ -59,7 +59,6 @@ end
 
 function onPathAction()
 	if isFullEvsTrain(1) or getPokemonTotalEVs(1)>=510 then
-		playSound("notice.wav")
 		if getPokemonHeldItem(1)=="Macho Brace" then
 			return takeItemFromPokemon(1)
 		end
@@ -72,6 +71,7 @@ function onPathAction()
 					break
 				end
 			end
+			playSound("Assets/score.wav")
 			if location~=0 then
 				return swapPokemon(1, location)
 			end
@@ -132,8 +132,12 @@ end
 function onBattleAction()
 	
 	if isWildBattle() and caughtPoke and(isOpponentShiny() or (collectPoke and not isAlreadyCaught()) or listContains(wishList, getOpponentName())) then
-		return tryToCatchOpponent(swiper)
+		return tryToCatchOpponent(swiper) or sendAnyPokemon()
 	end
+	if not runable then 
+		return attack() or sendUsablePokemon() or sendAnyPokemon()
+	end
+
 
 	if not isPokemonCanAttack(attacker) then
 		return run() or useAnyMove() or sendUsablePokemon() or sendAnyPokemon()
@@ -153,7 +157,7 @@ function onBattleAction()
 		if runable then
 			return sendPokemon(attacker) or run() or sendUsablePokemon() or sendAnyPokemon()
 		else
-			return attack() or sendUsablePokemon() or sendAnyPokemon
+			return attack() or sendUsablePokemon() or sendAnyPokemon()
 		end
 	end
 

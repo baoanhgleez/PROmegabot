@@ -34,6 +34,10 @@ local function useNearestPokecenter(map)
         return assert(talkToNpcOnCell(16,48), "Failed to talk to NPC on Cell 16/48")
     elseif pf.moveTo(map, PokecenterList) then
         return true
+    elseif string.find(map, "Pokemon Tower 5F") then
+        return assert(talkToNpc("Nurse Joy"), "Failed to talk to Nurse Joy")
+    elseif string.find(map, "Berry Tower Reception Kanto") then
+        return assert(talkToNpcOnCell(4, 12), "Failed to talk to Nurse Joy")
     end
     return assert(usePokecenter(), "usePokecenter() failed")
 end

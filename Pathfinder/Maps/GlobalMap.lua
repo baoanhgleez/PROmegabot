@@ -12,29 +12,29 @@ local _EventMap = require (cdpath .. "Event/EventMap")
 
 return function()
 
-	local KantoMap = _KantoMap()
-	local JohtoMap = _JohtoMap()
-	local HoennMap = _HoennMap()
-	local LinkMap  = _LinkMap()
-	local EventMap = _EventMap()
+local KantoMap = _KantoMap()
+local JohtoMap = _JohtoMap()
+local HoennMap = _HoennMap()
+local LinkMap  = _LinkMap()
+local EventMap = _EventMap()
 
-	local GlobalMap = {}
+local GlobalMap = {}
 
-	local function mergeMap(t1, t2)
-		for key, value in pairs(t2) do
-        	if not t1[key] then
-          		t1[key] = value
-        	elseif type(value) == "table" then
-            	mergeMap(t1[key], value)
-        	end
-    	end
-	end
+local function mergeMap(t1, t2)
+    for key, value in pairs(t2) do
+        if not t1[key] then
+            t1[key] = value
+        elseif type(value) == "table" then
+            mergeMap(t1[key], value)
+        end
+    end
+end
 
-	mergeMap(GlobalMap, KantoMap)
-	mergeMap(GlobalMap, JohtoMap)
-	mergeMap(GlobalMap, HoennMap)
-	mergeMap(GlobalMap, LinkMap)
-	mergeMap(GlobalMap, EventMap)
+mergeMap(GlobalMap, KantoMap)
+mergeMap(GlobalMap, JohtoMap)
+mergeMap(GlobalMap, HoennMap)
+mergeMap(GlobalMap, LinkMap)
+mergeMap(GlobalMap, EventMap)
 
-	return GlobalMap
+return GlobalMap
 end

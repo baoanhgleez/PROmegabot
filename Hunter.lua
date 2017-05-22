@@ -5,6 +5,7 @@ description= "This script is full support for pokemon hunting in "..target_locat
 dofile "Utilities.lua"
 
 function onStart()
+	playSound("Assets/score.wav")
 	if weakMove ~= "" then
 		swiper = getPokeIDHasMove(weakMove)
 		if swiper!=0 then
@@ -90,7 +91,7 @@ function onBattleMessage(message)
 end
 
 function onBattleAction()
-	if isWildBattle() and (isOpponentShiny() or (not isAlreadyCaught() and collectPoke) or mustCaught) then
+	if isWildBattle() and (isOpponentShiny() or (not isAlreadyCaught() and collectPoke) or mustCaught or getOpponentName()=="Abra") then
 		return tryToCatchOpponent() or sendAnyPokemon()
 	end
 
