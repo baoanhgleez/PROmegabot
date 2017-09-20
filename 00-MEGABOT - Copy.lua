@@ -4,7 +4,7 @@
 --------------------------------------
 
 -- 
-target_location ="Route 6"
+target_location =  "Route 117"
 
 
 -- Do you want to use the PathFinder?
@@ -14,10 +14,7 @@ autoFindPath = true
 -- The first is Pokecenter -> the last is target location
 -- You dont need to edit its (IF autoFindPath = TRUE)
 mapList = {
-	"Pokecenter Vulcanic Town",
-	"Vulcanic Town",
-	"Vulcan Forest",
-	"Vulcan Path"
+	"Pokemon Tower 5F"
 }
 
 
@@ -31,6 +28,8 @@ mount = "S Charizard Mount"
     area = {x1, y1, x2, y2} : Execute moveToRectangle(x1, y1, x2, y2)
 --]]
 area = "grass"
+--{37, 57, 40, 62} -- Mt. Moon 1F
+--{79, 36, 85, 38} -- Route 3 grass
 --{10, 11, 16, 12}	-- Route 1 grass
 --{37, 11, 42, 15} -- Route 8 grass
 --{36, 11, 48, 12} -- Route 22 grass
@@ -38,14 +37,7 @@ area = "grass"
 --{21, 16, 25, 18} -- Granite Cave B1F
 --{20, 35, 30, 40} -- Route 6 water
 --{20, 26, 24, 27} -- Route 15
---{16,36,24,41} -- Kalijodo Lake
---{31,19,37,21} -- Vulcan Path
---{23,33,28,35} -- Kalijodo Path
---{30, 42, 34, 50} -- Celadon City Water
---{21, 16, 25, 18} -- Granite Cave B1F
---{20, 26, 24, 27} -- Route 15
---{26, 13, 31, 15} -- Mt. Silver Exterior
---{41, 61, 50, 62} -- Mt. Silver 1F
+--{10, 13, 16, 15} -- Route 101
 
 -- Do you want to swap pokemon during training or leveling?
 autoSwap=true
@@ -58,18 +50,16 @@ attacker=1
 useHeadbutt = false
 useDigSpot = false
 
-
-
 -------------------------------------------------
 --------          HUNT CONFIG        ------------
 -- Dont edit it if you dont want to catch poke --
 -------------------------------------------------
 
 -- Do you have a sync at 1st?
-useSync= true
+useSync= false
 
 -- False swipe or Dragon Rage? Use weakMove = "" if you dont want to use it
-weakMove = "Quick Attack"
+weakMove = "Water Gun"
 
 -- If you want to sleep or paralysis wild poke, tell me what move?
 -- Use statusMove = "" if you dont want to use it
@@ -80,20 +70,21 @@ statusMove = ""
 checkAbi=false
 
 -- Percent of Health start throwing ball
-lowestHealthPercent = 50
+lowestHealthPercent = 80
 -- Max Pokemon want to catch
 maxCounter=20
 
 -- Config list of pokemon you want to catch
 wishList = {}
+
 -- Config list of abilities of pokemon you want to catch
-abiList = {"Static", "Vital Spirit", "No Guard", "Hustle"}
+abiList = {"Rattled", "Swift Swim", "Drought", "Hustle"}
 
 -- Do you want to catch uncaught pokemon?
 collectPoke=true
 
 -- Attach every pokemon you dont want to catch?
-farmMoney=true
+farmMoney=false
 
 -------------------------------------------------
 --------         LEVEL CONFIG        ------------
@@ -101,10 +92,10 @@ farmMoney=true
 -------------------------------------------------
 
 -- Pokemon will attack by itself at what Lv?
-atkLv = 50
+atkLv = 1
 
 -- Max Level you want to reach
-maxLv = 65
+maxLv = 50
 
 
 -------------------------------------------------
@@ -114,10 +105,11 @@ maxLv = 65
 
 -- Config list of Evs set you want to train
 -- Attack, Defense, Speed, SpAttack, SpDefense, HP
-EvList = {"SpAttack", "Speed"}
+EvList = {"Attack"}
 EvValue = {252, 252}
 
 ------------------------------------------------------
 
+
 -- Which module you will apply? Hunter, Trainer or Leveler? 
-dofile "Trainer.lua"
+dofile "Leveler.lua"

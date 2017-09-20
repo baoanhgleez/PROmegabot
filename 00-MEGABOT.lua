@@ -4,7 +4,7 @@
 --------------------------------------
 
 -- 
-target_location =  "Route 8"
+target_location =  "Sky Pillar 1F"
 
 
 -- Do you want to use the PathFinder?
@@ -19,7 +19,7 @@ mapList = {
 
 
 -- If you dont have any mount, use ""
-mount = "bicycle"
+mount = "S Charizard Mount"
 
 --[[	
 	area = Grass / Water    : Execute moveToGrass() or moveToWater()
@@ -27,7 +27,10 @@ mount = "bicycle"
     area = {x, y}           : Go fishing at (x,y)
     area = {x1, y1, x2, y2} : Execute moveToRectangle(x1, y1, x2, y2)
 --]]
-area = {37, 11, 42, 15}
+area = "grass"
+--{37, 57, 40, 62} -- Mt. Moon 1F
+--{79, 36, 85, 38} -- Route 3 grass
+--{10, 11, 16, 12}	-- Route 1 grass
 --{37, 11, 42, 15} -- Route 8 grass
 --{36, 11, 48, 12} -- Route 22 grass
 --{30, 42, 34, 50} -- Celadon City Water
@@ -63,24 +66,24 @@ statusMove = ""
 
 -- Do you want to check Abilities of Pokemon before catch its?
 -- WARNING : It's just work with Hunter.lua Module only
-checkAbi=true
+checkAbi=false
 
 -- Percent of Health start throwing ball
-lowestHealthPercent = 30
+lowestHealthPercent = 80
 -- Max Pokemon want to catch
 maxCounter=20
 
 -- Config list of pokemon you want to catch
-wishList = {"Kadabra", "Cubone",}
+wishList = {}
 
 -- Config list of abilities of pokemon you want to catch
-abiList = {"Synchronize", "Magic Guard", "No Guard", "Poison Point", "Hustle"}
+abiList = {"Rattled", "Swift Swim", "Drought", "Hustle"}
 
 -- Do you want to catch uncaught pokemon?
 collectPoke=true
 
 -- Attach every pokemon you dont want to catch?
-farmMoney=false
+farmMoney=true
 
 -------------------------------------------------
 --------         LEVEL CONFIG        ------------
@@ -88,10 +91,10 @@ farmMoney=false
 -------------------------------------------------
 
 -- Pokemon will attack by itself at what Lv?
-atkLv = 55
+atkLv = 1
 
 -- Max Level you want to reach
-maxLv = 46
+maxLv = 85
 
 
 -------------------------------------------------
@@ -101,8 +104,8 @@ maxLv = 46
 
 -- Config list of Evs set you want to train
 -- Attack, Defense, Speed, SpAttack, SpDefense, HP
-EvList = {"Attack", "Speed", "Defense"}
-EvValue = {252, 252, 6}
+EvList = {"Attack", "Speed"}
+EvValue = {252, 252}
 
 ------------------------------------------------------
 

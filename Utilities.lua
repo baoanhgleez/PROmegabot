@@ -53,17 +53,19 @@ function onPathActionHook()
 	end
 
 
-	-- get index of importance pokemon
-	if weakMove ~= "" then
-		swiper = getPokeIDHasMove(weakMove)
-	end
+	if not stringContains(name, "Item Farm") then
+		-- get index of importance pokemon
+		if weakMove ~= "" then
+			swiper = getPokeIDHasMove(weakMove)
+		end
 
-	if statusMove ~= "" then
-		anoyer = getPokeIDHasMove(statusMove)
-	end
+		if statusMove ~= "" then
+			anoyer = getPokeIDHasMove(statusMove)
+		end
 
-	if checkAbi then
-		rolePlayer = getPokeIDHasMove("Role Play")
+		if checkAbi then
+			rolePlayer = getPokeIDHasMove("Role Play")
+		end
 	end
 end
 registerHook("onPathAction", onPathActionHook)

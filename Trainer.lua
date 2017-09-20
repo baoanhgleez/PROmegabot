@@ -85,17 +85,17 @@ function onPathAction()
 		return giveItemToPokemon("Macho Brace",1)
 	end
 
-	if getPokemonHeldItem(attacker)~="Leftovers" and hasItem("Leftovers") and attacker~=1 then
+	if attacker~=1 and getPokemonHeldItem(attacker)~="Leftovers" and hasItem("Leftovers") then
 		return giveItemToPokemon("Leftovers",attacker)
 	end
 
 	-- If Hunter module is enable
 	if caughtPoke then
-		if weakMove~="" and getPokemonHeldItem(swiper)~="Leftovers" and hasItem("Leftovers") then
+		if weakMove~="" and getPokemonHeldItem(swiper)~="Leftovers" and hasItem("Leftovers") and swiper ~=1 then
 			return giveItemToPokemon("Leftovers",swiper)
 		end
 
-		if statusMove~="" and getPokemonHeldItem(anoyer)~="Leftovers" and hasItem("Leftovers") then
+		if statusMove~="" and getPokemonHeldItem(anoyer)~="Leftovers" and hasItem("Leftovers") and anoyer~=1 then
 			return giveItemToPokemon("Leftovers",anoyer)
 		end	
 	end
@@ -132,7 +132,7 @@ end
 function onBattleAction()
 	
 	if isWildBattle() and caughtPoke and(isOpponentShiny() or (collectPoke and not isAlreadyCaught()) or listContains(wishList, getOpponentName())) then
-		return tryToCatchOpponent(swiper) or sendAnyPokemon()
+		return tryToCatchOpponent(swiper) or sendAnyPokemon() or run()
 	end
 	if not runable then 
 		return attack() or sendUsablePokemon() or sendAnyPokemon()

@@ -30,14 +30,14 @@ Settings = {
 
         K_SUBWAY   = 20, -- Weight for using the subway path. Kanto
         J_SUBWAY   = 10, -- Weight for using the subway path. Johto
-        H_SUBWAY   = 5, -- Weight for using the subway path. Hoenn
+        H_SUBWAY   = 1000, -- Weight for using the subway path. Hoenn
 
         J_TO_K     = 10, -- Weight of the Subway from Johto to Kanto and reverse.
-        H_TO_KJ    = 10 -- Weight of the Subway from Hoenn to Kanto/Johto and reverse.
+        H_TO_KJ    = 999 -- Weight of the Subway from Hoenn to Kanto/Johto and reverse.
     },
 --  Custom Settings, loaded if the bot name match.
 --  Omitted settings will be taken on Default profile.
-    beemeister    = {
+    kienkoimk    = {
         MOUNT      = "Bicycle",
 
         DISCOVER   = true,  --discover items.
@@ -47,7 +47,24 @@ Settings = {
 
         K_SUBWAY   = 20, -- Weight for using the subway path. Kanto
         J_SUBWAY   = 10, -- Weight for using the subway path. Johto
-        H_SUBWAY   = 10,-- Weight for using the subway path. Hoenn
+        H_SUBWAY   = 100,-- Weight for using the subway path. Hoenn
+
+        J_TO_K     = 10, -- Weight of the Subway from Johto to Kanto and reverse.
+        H_TO_KJ    = 999 -- Weight of the Subway from Hoenn to Kanto/Johto and reverse.
+    },
+    --  Custom Settings, loaded if the bot name match.
+--  Omitted settings will be taken on Default profile.
+    gitkraken    = {
+        MOUNT      = "S Charizard Mount",
+
+        DISCOVER   = true,  --discover items.
+        HARVEST    = true,  -- harvest berries.
+        HEADBUTT   = useHeadbutt, -- headbutt trees.
+        DIG        = useDigSpot,  -- dig digSpots.
+
+        K_SUBWAY   = 20, -- Weight for using the subway path. Kanto
+        J_SUBWAY   = 10, -- Weight for using the subway path. Johto
+        H_SUBWAY   = 1000,-- Weight for using the subway path. Hoenn
 
         J_TO_K     = 10, -- Weight of the Subway from Johto to Kanto and reverse.
         H_TO_KJ    = 999 -- Weight of the Subway from Hoenn to Kanto/Johto and reverse.

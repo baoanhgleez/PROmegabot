@@ -13,10 +13,10 @@ autoFindPath = true
 -- If the map can not find, you must config manual
 -- The first is Pokecenter -> the last is target location
 -- You dont need to edit its (IF autoFindPath = TRUE)
-mapList = {}
+mapList = {""}
 
 -- If you dont have any mount, use ""
-mount = "Bicycle"
+mount = "S Charizard Mount"
 
 --[[	
 	area = Grass / Water    : Execute moveToGrass() or moveToWater()
@@ -45,24 +45,25 @@ function onStart()
 
  	-- Check if the team has a pokemon with ability is frisk
 	if frisker~=0 then
+
 		if getPokemonAbility(1)~= "Frisk" then
-			frisker=1
-			return swapPokemon(1, frisker)	
+			swapPokemon(1, frisker)	
+			frisker =1
 		end
 	else
 		-- If dont have frisk, thief will be lead of party
 		if not hasMove(1, stealMove) then
+			swapPokemon(1, thief)
 			thief=1
-			return swapPokemon(1, thief)
 		end
 	end
+	
 
 end
 
 function onPathAction()
 	wildHoldingItem = false
 	usedStealMove = false
-
 	if getPokemonHeldItem(thief) ~= nil then
 		return takeItemFromPokemon(thief)
 	end
