@@ -4,7 +4,7 @@
 --------------------------------------
 
 -- 
-target_location ="Route 6"
+target_location ="Mt. Silver 1F"
 
 
 -- Do you want to use the PathFinder?
@@ -30,7 +30,7 @@ mount = "S Charizard Mount"
     area = {x, y}           : Go fishing at (x,y)
     area = {x1, y1, x2, y2} : Execute moveToRectangle(x1, y1, x2, y2)
 --]]
-area = "grass"
+area = {31, 62, 40, 62}
 --{10, 11, 16, 12}	-- Route 1 grass
 --{37, 11, 42, 15} -- Route 8 grass
 --{36, 11, 48, 12} -- Route 22 grass
@@ -53,7 +53,7 @@ autoSwap=true
 caughtPoke=true
 
 -- Index of Pokemon that you want to switch in to every battle
-attacker=1
+attacker=2
 
 useHeadbutt = false
 useDigSpot = false
@@ -69,7 +69,7 @@ useDigSpot = false
 useSync= true
 
 -- False swipe or Dragon Rage? Use weakMove = "" if you dont want to use it
-weakMove = "Quick Attack"
+weakMove = "False swipe"
 
 -- If you want to sleep or paralysis wild poke, tell me what move?
 -- Use statusMove = "" if you dont want to use it
@@ -77,7 +77,7 @@ statusMove = ""
 
 -- Do you want to check Abilities of Pokemon before catch its?
 -- WARNING : It's just work with Hunter.lua Module only
-checkAbi=false
+checkAbi=true
 
 -- Percent of Health start throwing ball
 lowestHealthPercent = 50
@@ -85,15 +85,15 @@ lowestHealthPercent = 50
 maxCounter=20
 
 -- Config list of pokemon you want to catch
-wishList = {}
+wishList = {"Poliwag"}
 -- Config list of abilities of pokemon you want to catch
-abiList = {"Static", "Vital Spirit", "No Guard", "Hustle"}
+abiList = {"Swift Swim", "Vital Spirit", "No Guard", "Hustle"}
 
 -- Do you want to catch uncaught pokemon?
 collectPoke=true
 
 -- Attach every pokemon you dont want to catch?
-farmMoney=true
+farmMoney=false
 
 -------------------------------------------------
 --------         LEVEL CONFIG        ------------
@@ -104,7 +104,7 @@ farmMoney=true
 atkLv = 50
 
 -- Max Level you want to reach
-maxLv = 65
+maxLv = 99
 
 
 -------------------------------------------------
@@ -120,4 +120,4 @@ EvValue = {252, 252}
 ------------------------------------------------------
 
 -- Which module you will apply? Hunter, Trainer or Leveler? 
-dofile "Trainer.lua"
+dofile "Hunter.lua"

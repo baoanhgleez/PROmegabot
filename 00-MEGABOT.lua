@@ -4,7 +4,7 @@
 --------------------------------------
 
 -- 
-target_location =  "Sky Pillar 1F"
+target_location =  "Lilycove City"
 
 
 -- Do you want to use the PathFinder?
@@ -19,7 +19,7 @@ mapList = {
 
 
 -- If you dont have any mount, use ""
-mount = "S Charizard Mount"
+mount = "Xmas Stantler Mount"
 
 --[[	
 	area = Grass / Water    : Execute moveToGrass() or moveToWater()
@@ -27,7 +27,7 @@ mount = "S Charizard Mount"
     area = {x, y}           : Go fishing at (x,y)
     area = {x1, y1, x2, y2} : Execute moveToRectangle(x1, y1, x2, y2)
 --]]
-area = "grass"
+area = {7, 54, 9, 58}
 --{37, 57, 40, 62} -- Mt. Moon 1F
 --{79, 36, 85, 38} -- Route 3 grass
 --{10, 11, 16, 12}	-- Route 1 grass
@@ -37,6 +37,7 @@ area = "grass"
 --{21, 16, 25, 18} -- Granite Cave B1F
 --{20, 35, 30, 40} -- Route 6 water
 --{20, 26, 24, 27} -- Route 15
+--{7, 54, 9, 58} -- Route 110 grass
 
 -- Do you want to swap pokemon during training or leveling?
 autoSwap=true
@@ -66,24 +67,24 @@ statusMove = ""
 
 -- Do you want to check Abilities of Pokemon before catch its?
 -- WARNING : It's just work with Hunter.lua Module only
-checkAbi=false
+checkAbi=true
 
 -- Percent of Health start throwing ball
-lowestHealthPercent = 80
+lowestHealthPercent = 30
 -- Max Pokemon want to catch
 maxCounter=20
 
 -- Config list of pokemon you want to catch
-wishList = {}
+wishList = {"Electrike", "Oddish", "Plusle", "Minum"}
 
 -- Config list of abilities of pokemon you want to catch
-abiList = {"Rattled", "Swift Swim", "Drought", "Hustle"}
+abiList = {"Lightning Rod", "Run Away", "Volt Absorb"}
 
 -- Do you want to catch uncaught pokemon?
 collectPoke=true
 
 -- Attach every pokemon you dont want to catch?
-farmMoney=true
+farmMoney=false
 
 -------------------------------------------------
 --------         LEVEL CONFIG        ------------
@@ -104,7 +105,7 @@ maxLv = 85
 
 -- Config list of Evs set you want to train
 -- Attack, Defense, Speed, SpAttack, SpDefense, HP
-EvList = {"Attack", "Speed"}
+EvList = {"Attack"}
 EvValue = {252, 252}
 
 ------------------------------------------------------
