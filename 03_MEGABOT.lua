@@ -4,7 +4,7 @@
 --------------------------------------
 
 -- 
-target_location =  "Lilycove City"
+target_location =  "Pokemon Tower 2F"
 
 
 -- Do you want to use the PathFinder?
@@ -31,7 +31,7 @@ mount = "Bicycle"
     area = {x, y}           : Go fishing at (x,y)
     area = {x1, y1, x2, y2} : Execute moveToRectangle(x1, y1, x2, y2)
 --]]
-area = {31, 43}
+area = "Pokemon Tower 1F"
 --{10, 11, 16, 12}	-- Route 1 grass
 --{37, 11, 42, 15} -- Route 8 grass
 --{36, 11, 48, 12} -- Route 22 grass
@@ -50,7 +50,7 @@ area = {31, 43}
 --{41, 61, 50, 62} -- Mt. Silver 1F
 
 -- Do you want to swap pokemon during training or leveling?
-autoSwap=true
+autoSwap=false
 -- Do you want to catch pokemon during training or leveling?
 caughtPoke=true
 
@@ -59,6 +59,7 @@ attacker=1
 
 useHeadbutt = false
 useDigSpot = false
+buyPokeball = 10
 
 -------------------------------------------------
 --------          HUNT CONFIG        ------------
@@ -69,7 +70,7 @@ useDigSpot = false
 useSync= false
 
 -- False swipe or Dragon Rage? Use weakMove = "" if you dont want to use it
-weakMove = ""
+weakMove = "Dragon Rage"
 
 -- If you want to sleep or paralysis wild poke, tell me what move?
 -- Use statusMove = "" if you dont want to use it
@@ -77,15 +78,16 @@ statusMove = ""
 
 -- Do you want to check Abilities of Pokemon before catch its?
 -- WARNING : It's just work with Hunter.lua Module only
-checkAbi=false
+checkAbi=true
 
 -- Percent of Health start throwing ball
-lowestHealthPercent = 100
+lowestHealthPercent = 50
+
 -- Max Pokemon want to catch
-maxCounter=20
+maxCounter=10
 
 -- Config list of pokemon you want to catch
-wishList = {"Magikarp", "Magmar"}
+wishList = {"Cubone"}
 
 -- Config list of abilities of pokemon you want to catch
 abiList = {"Magic Guard", "Synchronize", "Drought", "Rock Head"}
@@ -94,7 +96,7 @@ abiList = {"Magic Guard", "Synchronize", "Drought", "Rock Head"}
 collectPoke=true
 
 -- Attach every pokemon you dont want to catch?
-farmMoney=true
+farmMoney=false
 
 -------------------------------------------------
 --------         LEVEL CONFIG        ------------
@@ -102,10 +104,10 @@ farmMoney=true
 -------------------------------------------------
 
 -- Pokemon will attack by itself at what Lv?
-atkLv = 55
+atkLv = 46
 
 -- Max Level you want to reach
-maxLv = 90
+maxLv = 99
 
 
 -------------------------------------------------
@@ -115,7 +117,7 @@ maxLv = 90
 
 -- Config list of Evs set you want to train
 -- Attack, Defense, Speed, SpAttack, SpDefense, HP
-EvList = {"SpAttack"}
+EvList = {"Speed", "SpAttack"}
 EvValue = {252, 252,  6}
 
 ------------------------------------------------------

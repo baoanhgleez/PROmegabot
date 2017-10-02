@@ -16,7 +16,7 @@ autoFindPath = true
 mapList = {""}
 
 -- If you dont have any mount, use ""
-mount = "S Charizard Mount"
+mount = "Bicycle"
 
 --[[	
 	area = Grass / Water    : Execute moveToGrass() or moveToWater()
@@ -27,11 +27,13 @@ mount = "S Charizard Mount"
 area = "grass"
 
 -- Use Covet or Thief?
-stealMove = "Thief"
+stealMove = "Covet"
+
+buyPokeball=0
 
 
 
-dofile "Utilities.lua"
+dofile "Common.lua"
 
 
 

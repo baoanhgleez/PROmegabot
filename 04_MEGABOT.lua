@@ -4,7 +4,7 @@
 --------------------------------------
 
 -- 
-target_location =  "Team Aqua Hideout B2F_C"
+target_location =  "Route 3"
 
 -- Do you want to use the PathFinder?
 autoFindPath = true
@@ -26,7 +26,7 @@ mount = ""
     area = {x, y}           : Go fishing at (x,y)
     area = {x1, y1, x2, y2} : Execute moveToRectangle(x1, y1, x2, y2)
 --]]
-area = {36, 82, 46, 85}
+area = {84, 36, 86, 37}
 --{10, 11, 16, 12}	-- Route 1 grass
 --{37, 11, 42, 15} -- Route 8 grass
 --{36, 11, 48, 12} -- Route 22 grass
@@ -47,13 +47,14 @@ area = {36, 82, 46, 85}
 -- Do you want to swap pokemon during training or leveling?
 autoSwap=true
 -- Do you want to catch pokemon during training or leveling?
-caughtPoke=false
+caughtPoke=true
 
 -- Index of Pokemon that you want to switch in to every battle
 attacker=1
 
 useHeadbutt = false
 useDigSpot = false
+buyPokeball = 10
 
 -------------------------------------------------
 --------          HUNT CONFIG        ------------
@@ -64,7 +65,7 @@ useDigSpot = false
 useSync= false
 
 -- False swipe or Dragon Rage? Use weakMove = "" if you dont want to use it
-weakMove = ""
+weakMove = "Bite"
 
 -- If you want to sleep or paralysis wild poke, tell me what move?
 -- Use statusMove = "" if you dont want to use it
@@ -89,7 +90,7 @@ abiList = {"Magic Guard", "Synchronize", "Drought", "Hustle", "Huge Power", "Sap
 collectPoke=true
 
 -- Attach every pokemon you dont want to catch?
-farmMoney=false
+farmMoney=true
 
 -------------------------------------------------
 --------         LEVEL CONFIG        ------------
@@ -97,10 +98,10 @@ farmMoney=false
 -------------------------------------------------
 
 -- Pokemon will attack by itself at what Lv?
-atkLv = 55
+atkLv = 1
 
 -- Max Level you want to reach
-maxLv = 96
+maxLv = 35
 
 
 -------------------------------------------------
@@ -116,4 +117,4 @@ EvValue = {252, 252}
 
 
 -- Which module you will apply? Hunter, Trainer or Leveler? 
-dofile "Hunter.lua"
+dofile "Leveler.lua"

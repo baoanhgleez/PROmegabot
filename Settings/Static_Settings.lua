@@ -47,7 +47,7 @@ Settings = {
 
         K_SUBWAY   = 20, -- Weight for using the subway path. Kanto
         J_SUBWAY   = 10, -- Weight for using the subway path. Johto
-        H_SUBWAY   = 5,-- Weight for using the subway path. Hoenn
+        H_SUBWAY   = 1000,-- Weight for using the subway path. Hoenn
 
         J_TO_K     = 10, -- Weight of the Subway from Johto to Kanto and reverse.
         H_TO_KJ    = 999 -- Weight of the Subway from Hoenn to Kanto/Johto and reverse.

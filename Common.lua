@@ -453,7 +453,11 @@ function controlOnPathAction()
 
 	map = getMapName()
 	if autoFindPath then
-		
+		if (buyPokeball > 0) and getItemQuantity("Pokeball")<10 then
+			log("Out of pokeball, time to shopping!")
+			return Pathfinder.useNearestPokemart(map, "Pokeball", buyPokeball)
+		end
+
 		if isTeamUsable() then
 			if getMapName()~=target_location then
 				return Pathfinder.moveTo(map,target_location)

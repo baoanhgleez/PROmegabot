@@ -1,7 +1,7 @@
 name = "Explore Module - Edited Version - MEGABOT Pack"
 description="Headbutt, Dig and more in any maps"
 
-dofile "Utilities.lua"
+dofile "Common.lua"
 dofile "TourMap.lua"
 
 GlobalTour = {}

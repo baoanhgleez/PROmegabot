@@ -4,7 +4,7 @@
 --------------------------------------
 
 -- 
-target_location =  "Lilycove City"
+target_location =  "Mt. Silver 1F"
 
 
 -- Do you want to use the PathFinder?
@@ -27,7 +27,7 @@ mount = "Xmas Stantler Mount"
     area = {x, y}           : Go fishing at (x,y)
     area = {x1, y1, x2, y2} : Execute moveToRectangle(x1, y1, x2, y2)
 --]]
-area = {7, 54, 9, 58}
+area = {41, 61, 50, 62}
 --{37, 57, 40, 62} -- Mt. Moon 1F
 --{79, 36, 85, 38} -- Route 3 grass
 --{10, 11, 16, 12}	-- Route 1 grass
@@ -38,6 +38,8 @@ area = {7, 54, 9, 58}
 --{20, 35, 30, 40} -- Route 6 water
 --{20, 26, 24, 27} -- Route 15
 --{7, 54, 9, 58} -- Route 110 grass
+--{26, 13, 31, 15} -- Mt. Silver Exterior
+--{41, 61, 50, 62} -- Mt. Silver 1F
 
 -- Do you want to swap pokemon during training or leveling?
 autoSwap=true
@@ -45,10 +47,11 @@ autoSwap=true
 caughtPoke=true
 
 -- Index of Pokemon that you want to switch in to every battle
-attacker=1
+attacker=2
 
 useHeadbutt = false
 useDigSpot = false
+buyPokeball = 50
 
 -------------------------------------------------
 --------          HUNT CONFIG        ------------
@@ -67,18 +70,17 @@ statusMove = ""
 
 -- Do you want to check Abilities of Pokemon before catch its?
 -- WARNING : It's just work with Hunter.lua Module only
-checkAbi=true
-
+checkAbi=false
 -- Percent of Health start throwing ball
-lowestHealthPercent = 30
+lowestHealthPercent = 10
 -- Max Pokemon want to catch
 maxCounter=20
 
 -- Config list of pokemon you want to catch
-wishList = {"Electrike", "Oddish", "Plusle", "Minum"}
+wishList = {"Lotad", "Magmar"}
 
 -- Config list of abilities of pokemon you want to catch
-abiList = {"Lightning Rod", "Run Away", "Volt Absorb"}
+abiList = {"Sap Sipper", "Levitate", "Keen Eye", "Sturdy", "Weak Armor", "Reckless"}
 
 -- Do you want to catch uncaught pokemon?
 collectPoke=true
@@ -92,10 +94,10 @@ farmMoney=false
 -------------------------------------------------
 
 -- Pokemon will attack by itself at what Lv?
-atkLv = 1
+atkLv = 55
 
 -- Max Level you want to reach
-maxLv = 85
+maxLv = 98
 
 
 -------------------------------------------------
@@ -112,4 +114,4 @@ EvValue = {252, 252}
 
 
 -- Which module you will apply? Hunter, Trainer or Leveler? 
-dofile "Hunter.lua"
+dofile "Leveler.lua"

@@ -18,6 +18,8 @@ local function useNearestPokecenter(map)
     map = map or getMapName()
     if map == "Indigo Plateau Center" then
         return assert(talkToNpcOnCell(4, 22), "Failed to talk to Nurse on Cell 4/22")
+    elseif map=="Pokemon Tower 5F" then
+        return assert(talkToNpcOnCell(9, 10), "Failed to talk to Nurse on Cell 9/10")
     elseif string.find(map, "Seafoam") and getMoney() > 1500 then
         if pf.moveTo(map, "Seafoam B4F_D") then
             return true

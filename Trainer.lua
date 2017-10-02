@@ -2,7 +2,7 @@ name = "Training Module - Edited Version - MEGABOT Pack"
 author= "gl3e"
 description= "This script is full support for pokemon EV training in "..target_location.."."
 
-dofile "Utilities.lua"
+dofile "Common.lua"
 
 function onStart()
 	if caughtPoke then

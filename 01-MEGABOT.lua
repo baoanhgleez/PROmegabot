@@ -4,7 +4,7 @@
 --------------------------------------
 
 -- 
-target_location ="Mt. Silver 1F"
+target_location ="Route 12"
 
 
 -- Do you want to use the PathFinder?
@@ -30,7 +30,7 @@ mount = "S Charizard Mount"
     area = {x, y}           : Go fishing at (x,y)
     area = {x1, y1, x2, y2} : Execute moveToRectangle(x1, y1, x2, y2)
 --]]
-area = {31, 62, 40, 62}
+area = "grass"
 --{10, 11, 16, 12}	-- Route 1 grass
 --{37, 11, 42, 15} -- Route 8 grass
 --{36, 11, 48, 12} -- Route 22 grass
@@ -57,6 +57,7 @@ attacker=2
 
 useHeadbutt = false
 useDigSpot = false
+buyPokeball = 50
 
 
 
@@ -77,17 +78,17 @@ statusMove = ""
 
 -- Do you want to check Abilities of Pokemon before catch its?
 -- WARNING : It's just work with Hunter.lua Module only
-checkAbi=true
+checkAbi=false
 
 -- Percent of Health start throwing ball
-lowestHealthPercent = 50
+lowestHealthPercent = 30
 -- Max Pokemon want to catch
 maxCounter=20
 
 -- Config list of pokemon you want to catch
-wishList = {"Poliwag"}
+wishList = {"Snorlax"}
 -- Config list of abilities of pokemon you want to catch
-abiList = {"Swift Swim", "Vital Spirit", "No Guard", "Hustle"}
+abiList = {"Lightning Rod", "Vital Spirit", "No Guard", "Hustle"}
 
 -- Do you want to catch uncaught pokemon?
 collectPoke=true
@@ -114,10 +115,10 @@ maxLv = 99
 
 -- Config list of Evs set you want to train
 -- Attack, Defense, Speed, SpAttack, SpDefense, HP
-EvList = {"SpAttack", "Speed"}
+EvList = {"Attack", "Speed"}
 EvValue = {252, 252}
 
 ------------------------------------------------------
 
 -- Which module you will apply? Hunter, Trainer or Leveler? 
-dofile "Hunter.lua"
+dofile "Trainer.lua"
